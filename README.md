@@ -37,7 +37,10 @@ Make a GET request to the server and append `/render?url=YOUR_URL` and hopefully
 # NOTE!
 Note that the assets doesn't load properly, that's because the request is not proxied and therefor the prerender server is acting like the host, which it's obviously not. To get around easily, [prerender.io](https://prerender.io/documentation/install-middleware) has put together middlewares for a lot of different technologies. **Just be sure to configure the middlewares to point to your prerender server and not their own service.**
 
-With Express.js you can e.g use [this](https://github.com/prerender/prerender-node).
+With Express.js you can e.g use [this](https://github.com/prerender/prerender-node) and add to your app:
+```js
+app.use(require('prerender-node').set('prerenderServiceUrl', '<URL pointing to your prerender server>'));
+```
 
 # Why?
 Single page applications (SPAs) are super nice today. But they lack one "feature" - SEO. A lot of web crawlers have problem with rendering JavaScript rendered content on SPA websites. One popular solution is to create a server rendered infrastructure, but that can sometimes be confusing and time consuming. 
