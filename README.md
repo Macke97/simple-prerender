@@ -11,6 +11,7 @@ This app works best when running through Docker.
 | PORT  | `Number` Which port the server should be ran on.                                                       |
 | CACHE | `Boolean` Whether to use in-memory caching for faster responses when multiple requests hit the server. |
 | DEBUG | `Boolean` Set to true if running the app outside Docker.                                               |
+
 ## Docker
 Example on running with Docker: 
 ```sh
